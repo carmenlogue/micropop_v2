@@ -18,11 +18,14 @@ gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
   gem 'guard-rails', require: false
   gem 'guard-rspec', require: false
   gem 'guard-rubocop', require: false
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop', '~> 0.57.0', require: false
+  gem 'pry-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
