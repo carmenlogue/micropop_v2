@@ -14,6 +14,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'carrierwave'
+gem 'devise'
 gem 'dotenv-rails'
 
 group :development, :test do
