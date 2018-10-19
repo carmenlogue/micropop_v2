@@ -1,24 +1,16 @@
-# README
+# MicroPop
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+    $ make setup
+    $ sudo sh -c 'echo "127.0.0.1 micropop_v2.local" >> /etc/hosts'
+    $ make serve
+    $ open http://micropop.local:3000/
 
-* Ruby version
+A rake task is provided for creating dummy data in local development.
 
-* System dependencies
+    $ docker-compose run web rake dev:prime
 
-* Configuration
+## Mail
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+In order to see emails sent in the development environment browse to http://localhost:1080.
