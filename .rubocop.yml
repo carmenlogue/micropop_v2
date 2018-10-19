@@ -1,0 +1,56 @@
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - Capfile
+    - Gemfile
+    - Guardfile
+    - lib/tasks/*.rake
+    - db/**/*
+    - config/**/*
+    - script/**/*
+    - bin/**/*
+    - vendor/**/*
+    - tmp/**/*
+    - node_modules/**/*
+Metrics/AbcSize:
+  Max: 20
+Metrics/BlockLength:
+  Exclude:
+    - app/admin/*.rb
+    - spec/**/*.rb
+Metrics/ClassLength:
+  Max: 200
+Metrics/LineLength:
+  Enabled: true
+  Max: 100
+Metrics/ModuleLength:
+  Exclude:
+    - app/admin/*.rb
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+Rails:
+  Enabled: true
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Rails/RequestReferer:
+  EnforcedStyle: referrer
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - staging
+    - development
+    - test
+Style/AndOr:
+  EnforcedStyle: conditionals
+Style/BlockComments:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/CollectionMethods:
+  Enabled: true
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/SymbolArray:
+  EnforcedStyle: brackets
