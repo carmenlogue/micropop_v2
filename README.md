@@ -10,6 +10,12 @@
 A rake task is provided for creating dummy data in local development.
 
     $ docker-compose run web rake dev:prime
+    
+## Specs & Rubocop
+        
+Guard has been setup in order to keep an eye on specs and ruby styles. To kick this off run:
+        
+    $ docker-compose run web bundle exec guard
 
 ## Mail
 
