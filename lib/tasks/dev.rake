@@ -6,7 +6,7 @@ namespace :dev do
       raise 'This task can only be run in the development environment'
     end
 
-    create_user('admin@example.com')
+    create_user('admin@micropop.com')
 
     puts 'Done'
   end
