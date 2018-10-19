@@ -1,5 +1,7 @@
 # MicroPop
 
+[![Build Status](https://travis-ci.com/carmenlogue/micropop_v2.svg?branch=master)](https://travis-ci.com/carmenlogue/micropop_v2)
+
 ## Setup
 
     $ make setup
