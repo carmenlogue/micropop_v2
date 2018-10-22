@@ -6,7 +6,7 @@ module Admin
       results = if params[:query]
                   Poem.all.order(:fragment).where(
                     'lower(fragment) LIKE ?',
-                    "%#{params[:query].downcase}%",
+                    "%#{params[:query].downcase}%"
                   )
                 else
                   Poem.all.order(:fragment)
