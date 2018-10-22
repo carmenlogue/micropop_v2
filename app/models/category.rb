@@ -1,3 +1,3 @@
-class Category < ActiveRecord::Base
-	has_and_belongs_to_many :poems
+class Category < ApplicationRecord
+  has_and_belongs_to_many :poems
 end

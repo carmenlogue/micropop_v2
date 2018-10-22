@@ -1,4 +1,4 @@
-class Song < ActiveRecord::Base
-	has_many :poems
-	belongs_to :artist
+class Song < ApplicationRecord
+  has_many :poems, dependent: :destroy
+  belongs_to :artist
 end
