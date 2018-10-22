@@ -1,0 +1,30 @@
+<div class="card mb-3">
+  <div class="card-block">
+    <div class="card-body">
+      <h2><%= resource.new_record? ? 'Add' : 'Edit' %> <%= resource.class.model_name.human %></h2>
+      <% if resource.errors.any? %>
+        <div>
+          <p>
+            <%= pluralize(resource.errors.count, "error") %> prohibited this
+            <%= resource.class.name.underscore %> from being saved:
+          </p>
+          <ul>
+            <% resource.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% else %>
+        <p>Please complete the details below:</p>
+      <% end %>
+      <%= form_for [:admin, resource] do |f| %>
+        <%= render "admin/#{resource.class.model_name.plural}/form_fields", f: f, resource: resource %>
+        <%= f.submit (resource.new_record? ? 'Create' : 'Update'),
+                     class: 'btn btn-primary' %>
+        <%= link_to 'Cancel',
+                    cancel_path,
+                    class: 'btn btn-outline' %>
+      <% end %>
+    </div>
+  </div>
+</div>
