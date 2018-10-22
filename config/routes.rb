@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :artists
+    resources :songs
     resources :poems
 
     get '/', action: :index
