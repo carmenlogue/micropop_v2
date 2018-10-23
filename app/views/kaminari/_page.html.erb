@@ -5,6 +5,12 @@
   <% if page.current? %>
     <span class="show-for-sr">You're on page</span> <%= page %>
   <% else %>
-    <%= link_to page, url, {:class => 'c-pagination__link', :remote => remote, :rel => page.next? ? 'next' : page.prev? ? 'prev' : nil} %>
+    <%= link_to page,
+                url,
+                {
+                  class: 'c-pagination__link',
+                  remote: remote,
+                  rel: page.next? ? 'next' : page.prev? ? 'prev' : nil
+                } %>
   <% end %>
 </li>

@@ -51,7 +51,7 @@ module Admin
     end
 
     def poem_params
-      params[:poem].permit(:fragment)
+      params[:poem].permit(:fragment, :image, :image_cache, :remove_image)
     end
 
     def success_path

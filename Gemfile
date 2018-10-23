@@ -18,6 +18,7 @@ gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'material-sass', '4.1.1'
+gem 'mini_magick'
 gem 'mini_racer'
 gem 'select2-rails'
 
