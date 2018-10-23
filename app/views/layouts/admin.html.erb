@@ -19,6 +19,8 @@
         <div class="collapse navbar-collapse" id="navbarMain">
           <ul class="navbar-nav mr-auto">
             <%= tab_for('Poems', admin_poems_path) %>
+            <%= tab_for('Artists', admin_artists_path) %>
+            <%= tab_for('Songs', admin_songs_path) %>
           </ul>
           <ul class="navbar-nav">
             <%= tab_for('Sign out', destroy_user_session_path, method: :delete) %>
