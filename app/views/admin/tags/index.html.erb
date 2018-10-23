@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="h2 float-left mb-4">Tags</h1>
+    <%= link_to('Add',
+                new_admin_tag_path,
+                class: 'btn btn-primary float-right mb-4') %>
+  </div>
+</div>
+
+<%= form_tag admin_tags_path, class: "row", method: :get do %>
+    <div class="col-md-9 text-right">
+      <%= text_field_tag :query,
+                         params[:query],
+                         id: 'tag_search',
+                         autocomplete: :off,
+                         placeholder: "Search for a tag name...",
+                         class: "form-control float-left mt-3 mb-3 bg-white" %>
+    </div>
+    <div class="col-md-3 text-right">
+      <%= submit_tag "Search", class: "btn btn-primary mt-3 float-right" %>
+    </div>
+<% end %>
+
+<%= link_to 'Back to index', admin_tags_path, class: 'btn btn-primary mb-3' %>
+
+<div class="card table-responsive">
+  <%= paginate @tags %>
+  <table class="table">
+    <tr>
+      <%= content_tag(:th, 'Name', scope: 'col') %>
+      <%= content_tag(:th, 'Actions',  scope: 'col') %>
+    </tr>
+    <tr>
+      <% if @tags.any? %>
+        <%= render @tags %>
+      <% else %>
+        <div class="col-md-12">
+          <span class="lead">No tags added, yet.</span>
+        </div>
+      <% end %>
+    </tr>
+  </table>
+</div>

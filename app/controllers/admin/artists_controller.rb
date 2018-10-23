@@ -33,7 +33,7 @@ module Admin
     def edit; end
 
     def update
-      if @poem.update(artist_params)
+      if @artist.update(artist_params)
         redirect_to success_path, notice: 'Successfully updated artist.'
       else
         render :edit
