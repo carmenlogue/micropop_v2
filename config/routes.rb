@@ -9,4 +9,10 @@ Rails.application.routes.draw do
 
     get '/', action: :index
   end
+
+  get 'alphabet' => 'pages#alphabet'
+  get 'hits'     => 'pages#hits'
+  get 'best'     => 'pages#best'
+
+  root 'pages#home'
 end
