@@ -20,13 +20,16 @@
         <dd><%= @poem.fragment %></dd>
 
         <dt>Artist</dt>
-        <dd><%= @poem.artist %></dd>
+        <dd><%= @poem.artist.name %></dd>
 
         <dt>Artist signature</dt>
-        <dd><%= @poem.signature %></dd>
+        <dd><%= @poem.artist.signature %></dd>
 
         <dt>Song</dt>
         <dd><%= @poem.song.title %></dd>
+
+        <dt>Image</dt>
+        <dd><%= image_tag @poem.image.admin_thumb.url if @poem.image? %></dd>
 
         <dt>Categories</dt>
         <dd><%= @poem.categories.map(&:name) %></dd>
