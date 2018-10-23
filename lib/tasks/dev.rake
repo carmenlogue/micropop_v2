@@ -12,10 +12,6 @@ namespace :dev do
   end
 
   def create_user(email)
-    User.create!(
-      email:                 email,
-      password:              'password',
-      password_confirmation: 'password'
-    )
+    User.create!(email: email, password: 'password', password_confirmation: 'password')
   end
 end
