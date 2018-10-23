@@ -16,6 +16,7 @@ gem 'carrierwave'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'material-sass', '4.1.1'
 gem 'mini_racer'
 
