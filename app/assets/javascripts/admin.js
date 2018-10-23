@@ -14,4 +14,5 @@
 //= require jquery3
 //= require bootstrap
 //= require material
+//= require select2
 //= require_tree ./admin
