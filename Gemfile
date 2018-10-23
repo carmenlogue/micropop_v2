@@ -11,7 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
-gem 'bootstrap', '4.1.1'
+gem 'bootstrap', '>= 4.1.2'
 gem 'carrierwave'
 gem 'devise'
 gem 'dotenv-rails'
