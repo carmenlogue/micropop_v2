@@ -6,3 +6,19 @@
   <%= f.label :signature %>
   <%= f.text_field :signature, class: 'form-control' %>
 </div>
+<div class="form-group">
+  <%= f.select :songs,
+               options_from_collection_for_select(
+                   Song.all,
+                   :id,
+                   :title,
+                   { selected: f.object.song_ids }
+               ),
+               {},
+               {
+                   multiple: true,
+                   size: Song.all,
+                   name: 'poem[song_ids][]',
+                   class: 'form-control multiple_selector'
+               } %>
+</div>

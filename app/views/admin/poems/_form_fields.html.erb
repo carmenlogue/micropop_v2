@@ -2,3 +2,23 @@
   <%= f.label :fragment %>
   <%= f.text_field :fragment, class: 'form-control' %>
 </div>
+<div class="form-group">
+  <%= f.label :fragment %>
+  <%= f.text_field :fragment, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.select :tags,
+               options_from_collection_for_select(
+                 Tag.all,
+                 :id,
+                 :name,
+                 { selected: f.object.tag_ids }
+               ),
+               {},
+               {
+                 multiple: true,
+                 size: Tag.all,
+                 name: 'poem[tag_ids][]',
+                 class: 'form-control multiple_selector'
+               } %>
+</div>

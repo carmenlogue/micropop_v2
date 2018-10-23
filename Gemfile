@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'material-sass', '4.1.1'
 gem 'mini_racer'
+gem 'select2-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
