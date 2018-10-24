@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body class="admin-body">
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <%= link_to('microPOP', '#', class: 'navbar-brand', target: :blank) %>
@@ -40,10 +40,6 @@
       <%= yield %>
       <%= yield :page_js %>
     </main>
-
-    <footer class="footer">
-    </footer>
-
     <%= javascript_include_tag "admin" %>
   </body>
 </html>

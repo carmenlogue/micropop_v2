@@ -1,0 +1,43 @@
+<div class="side-menu">
+  <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <div class="brand-wrapper">
+        <!-- Hamburger -->
+        <button type="button" class="navbar-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!-- Brand -->
+        <div class="brand-name-wrapper">
+          <a class="navbar-brand" href="/">
+            <%= image_tag("logo_a.png")%>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Menu -->
+    <div class="side-menu-container">
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'A / Z .', alphabet_path,
+                        class: "#{params[:action] == 'alphabet' ? 'active' : ''}" %></li>
+        <li><%= link_to 'GREATEST HITS .', hits_path,
+                        class: "#{params[:action] == 'hits' ? 'active' : ''}" %></li>
+        <li><%= link_to 'BEST OF .', best_path,
+                        class: "#{params[:action] == 'best' ? 'active' : ''}" %></li>
+
+        <li><%= link_to image_tag("random_c.png"), root_path %></li>
+        <li><%= link_to image_tag("tw_a.png"), 'https://twitter.com/microPOP_',
+                        target: "_blank" %></li>
+        <li><%= link_to image_tag("in_a.png"), 'https://www.instagram.com/microPOP__/',
+                        target: "_blank" %></li>
+        <li><%= link_to image_tag("fb_a.png"), 'https://www.facebook.com/somosmicropop/',
+                        target: "_blank" %></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+</div>

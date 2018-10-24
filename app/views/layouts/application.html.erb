@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>microPOP</title>
+    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
     <%= csrf_meta_tags %>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   </head>
-
   <body>
-    <%= render 'components/header' %>
+    <div class="row">
+      <!-- Side bar -->
+      <%= render 'components/sidebar' %>
 
-    <%= yield %>
+      <!-- Main Content -->
+      <div class="container-fluid">
+        <div class="side-body">
+          <main role="main">
+            <% flash.each do |key, msg| %>
+              <div class="alert alert-<%= key %>" role="alert">
+                <%= msg %>
+              </div>
+            <% end %>
+
+            <%= yield %>
+            <%= yield :page_js %>
+          </main>
+          <%= javascript_include_tag "application" %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
