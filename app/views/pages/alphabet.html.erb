@@ -1,1 +1,7 @@
-ALPHABET
+<div id="alphabet-index">
+  <div class="col-md-10 col-sm-6 no-padding">
+    <% @letters.each do |letter| %>
+      <%= link_to image_tag("alphabet/az_#{letter.downcase}"), '#' %>
+    <% end %>
+  </div>
+</div>

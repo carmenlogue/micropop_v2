@@ -9,10 +9,12 @@
     $ make serve
     $ open http://micropop.local:3000/
 
-A rake task is provided for creating dummy data in local development.
+Rake tasks are provided for creating data in local development.
 
     $ docker-compose run web rake dev:prime
-    
+    $ docker-compose run web rake data_import:from_csv_to_db
+    $ docker-compose run web rake images_import:from_csv_to_db
+     
 ## Specs & Rubocop
         
 Guard has been setup in order to keep an eye on specs and ruby styles. To kick this off run:

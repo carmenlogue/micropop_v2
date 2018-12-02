@@ -13,9 +13,7 @@
 
         <!-- Brand -->
         <div class="brand-name-wrapper">
-          <a class="navbar-brand" href="/">
-            <%= image_tag("logo_a.png")%>
-          </a>
+          <%= link_to image_tag("logo_a.png"), poem_path(reference: Poem.pluck(:reference).sample) %>
         </div>
       </div>
     </div>
@@ -30,7 +28,7 @@
         <li><%= link_to 'BEST OF .', best_path,
                         class: "#{params[:action] == 'best' ? 'active' : ''}" %></li>
 
-        <li><%= link_to image_tag("random_c.png"), root_path %></li>
+        <li><%= link_to image_tag("random_c.png"), poem_path(reference: Poem.pluck(:reference).sample) %></li>
         <li><%= link_to image_tag("tw_a.png"), 'https://twitter.com/microPOP_',
                         target: "_blank" %></li>
         <li><%= link_to image_tag("in_a.png"), 'https://www.instagram.com/microPOP__/',

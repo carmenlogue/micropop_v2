@@ -1,4 +1,4 @@
-FROM ruby:2.5-slim
+FROM ruby:2.5.1
 MAINTAINER carmenlogue@gmail.com
 ENV REFRESHED_AT 2018-06-06
 

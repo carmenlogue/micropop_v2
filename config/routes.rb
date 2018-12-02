@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   get 'hits'     => 'pages#hits'
   get 'best'     => 'pages#best'
 
+  resources :poems, param: :reference
+
   root 'pages#home'
 end

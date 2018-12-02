@@ -1,0 +1,21 @@
+<div id="poems-show">
+  <div class="row">
+    <%= image_tag(@poem.image_url) %>
+  </div>
+</div>
+<div id="social-media" class="row">
+  <!-- Twitter -->
+  <a id="twitter"
+     href="<%= tweet(@poem) %>"
+     target="_blank">
+    <%= image_tag("twitter_white.png") %>
+  </a>
+  <!-- Facebook -->
+  <a id="facebook"
+     href="http://www.facebook.com/sharer.php?u=<%= url_for_facebook(@poem) %>"
+     target="_blank">
+    <%= image_tag("fb_white.png") %>
+  </a>
+  <!-- Download -->
+  <%= link_to image_tag("download_white.png"), @poem.image_url, download: "#{@poem.image_url}" %>
+</div>
