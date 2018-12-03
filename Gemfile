@@ -20,6 +20,7 @@ gem 'kaminari'
 gem 'material-sass', '4.1.1'
 gem 'mini_magick'
 gem 'mini_racer'
+gem 'searchkick'
 gem 'select2-rails'
 
 group :development, :test do

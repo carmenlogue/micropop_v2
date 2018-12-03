@@ -14,7 +14,6 @@
   </head>
   <body>
     <div class="row">
-      <!-- Side bar -->
       <%= render 'components/sidebar' %>
 
       <!-- Main Content -->
@@ -26,7 +25,7 @@
                 <%= msg %>
               </div>
             <% end %>
-
+            <%= render 'components/search_bar' %>
             <%= yield %>
             <%= yield :page_js %>
           </main>

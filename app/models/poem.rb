@@ -1,4 +1,6 @@
 class Poem < ApplicationRecord
+  searchkick word_start: [:fragment]
+
   mount_uploader :image, ImageUploader
 
   has_and_belongs_to_many :tags
@@ -11,6 +13,15 @@ class Poem < ApplicationRecord
   validates :reference, uniqueness: true
 
   before_create :create_reference
+
+  def search_data
+    {
+      fragment: fragment,
+      song_id: song.id,
+      artist_id: song.artist.id,
+      tag_ids: tags.pluck(:tag_id)
+    }
+  end
 
   private
 
