@@ -12,6 +12,9 @@ services:
     depends_on:
       - database
       - mailcatcher
+      - elasticsearch
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
     stdin_open: true
     tty: true
   database:
@@ -27,3 +30,7 @@ services:
     ports:
       - "1080:1080"
       - "1025:1025"
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.0
+    ports:
+      - "9200:9200"
