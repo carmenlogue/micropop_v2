@@ -1,6 +1,6 @@
 require 'csv'
 
-namespace :import_data do
+namespace :data_import do
 
   desc 'import data from csv to local DB'
   task :from_csv_to_db => :environment do

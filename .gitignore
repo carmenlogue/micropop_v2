@@ -38,3 +38,4 @@ yarn-debug.log*
 /config/master.key
 
 excel_data_v2.csv
+images_data_v2.csv

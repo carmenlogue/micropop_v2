@@ -1,0 +1,12 @@
+<div id="poems-index">
+  <div class="row">
+    <% @poems.each do |poem| %>
+      <div class="col-md-3 col-sm-3">
+        <%= link_to image_tag(poem.image_url), poem_path(poem) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="center-pagination">
+  <%= paginate @poems %>
+</div>
