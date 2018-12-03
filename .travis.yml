@@ -6,6 +6,7 @@ branches:
     - master
 services:
   - postgresql
+  - elasticsearch
 before_script:
   - cp config/database.yml.travis config/database.yml
   - cp .env.sample .env
