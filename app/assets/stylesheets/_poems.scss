@@ -1,0 +1,23 @@
+.poem-row {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 30px 0;
+  img {
+    height: 500px;
+    width: 500px;
+  }
+}
+
+.social-media-row {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+#twitter {
+  padding-top: 20px;
+}
+
+#facebook {
+  padding: 16px 15px 0 25px;
+}

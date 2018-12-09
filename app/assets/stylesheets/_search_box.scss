@@ -1,7 +1,6 @@
 .page-header {
   border-bottom: 1px solid #eee;
-  margin-top: 40px;
-  margin-left:0px;
+  margin-left: 0px;
 }
 
 .search-for-list {
@@ -12,6 +11,7 @@
 
 #first-loupe {
   display: none;
+  margin-top: 1%;
 }
 
 @media (min-width: 620px) {
@@ -32,4 +32,32 @@
   #last-loupe {
     display: none;
   }
+}
+
+.search-form-control {
+  font-size: 23px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: white;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: white;
+  font-family: "Avenir";
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: white;
+  opacity: 1;
+  font-family: "Avenir";
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: white;
+  opacity: 1;
+  font-family: "Avenir";
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+  font-family: "Avenir";
 }
