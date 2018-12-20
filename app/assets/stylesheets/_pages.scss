@@ -1,3 +1,8 @@
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 /* Sidebar and top nav bar
 -------------------------------------------------- */
 
@@ -14,6 +19,7 @@
   height: 100%;
   background-color: #f8f8f8;
   border-right: 1px solid #e7e7e7;
+  padding-top: 20px;
 }
 .side-menu .navbar {
   border: none;
@@ -34,6 +40,9 @@
 .side-menu .navbar-nav li a {
   padding: 15px;
 }
+.navbar-default .navbar-nav>li>a {
+  color: #d22d61 !important;
+}
 .side-menu .brand-name-wrapper {
   min-height: 190px;
 }
@@ -42,7 +51,7 @@
 }
 /* Main body section */
 .side-body {
-  margin-left: 310px;
+  margin-left: 300px;
 }
 /* small screen */
 @media (max-width: 768px) {
