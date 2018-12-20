@@ -1,10 +1,9 @@
 .poem-row {
-  display: flex;
-  justify-content: center;
-  margin: 30px 0 30px 0;
+  float: none !important;
+  margin: 30px auto;
   img {
-    height: 500px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -20,4 +19,15 @@
 
 #facebook {
   padding: 16px 15px 0 25px;
+}
+
+#poems-index {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  float: none;
+  margin: 0 auto;
+}
+.poem-image {
+  margin: 10px;
 }

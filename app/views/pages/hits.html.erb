@@ -1,10 +1,9 @@
-<div id="hits-index">
-  <div class="row">
-    <% @hits.each do |hit| %>
-      <div class="col-xs-3 col-md-2 col-sm-2 no-padding">
-        <%= link_to image_tag("greatest_hits/greatesthits_#{hit}"), poems_path(hit: hit) %>
-      </div>
-    <% end %>
-  </div>
+<div id="hits-index" class="col-md-10 col-sm-12">
+  <% @hits.each do |hit| %>
+    <%= link_to image_tag("greatest_hits/greatesthits_#{hit}"),
+                poems_path(query: hit),
+                class: 'hit-box'
+    %>
+  <% end %>
 </div>
 

@@ -1,0 +1,11 @@
+#alphabet-index {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  float: none;
+  margin: 0 auto;
+  justify-content: center;
+}
+.alphabet-letter {
+  margin: 20px;
+}
