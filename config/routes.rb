@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   get 'hits'     => 'pages#hits'
   get 'best'     => 'pages#best'
 
-  resources :poems, param: :reference
+  resources :poems, param: :reference do
+    get :autocomplete, on: :collection
+  end
 
   root 'pages#home'
 end

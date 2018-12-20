@@ -21,6 +21,7 @@ gem 'mini_magick'
 gem 'mini_racer'
 gem 'searchkick'
 gem 'select2-rails'
+gem 'twitter-typeahead-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

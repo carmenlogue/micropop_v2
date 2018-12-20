@@ -4,34 +4,12 @@
 }
 
 .search-for-list {
-  padding: 0px;
-  margin: 0px;
-  display: inline-flex;
+  width: 90%;
 }
 
 #first-loupe {
-  display: none;
-  margin-top: 1%;
-}
-
-@media (min-width: 620px) {
-  #first-loupe {
-    display: inline;
-  }
-}
-
-#last-loupe {
-  display: inline;
-}
-
-#last-loupe  input{
-  width: 25px;
-}
-
-@media (min-width: 620px) {
-  #last-loupe {
-    display: none;
-  }
+  position: absolute;
+  padding-top: 4px;
 }
 
 .search-form-control {
