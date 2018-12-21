@@ -10,6 +10,17 @@ class PoemsController < ApplicationController
     @poem = Poem.find_by(reference: params[:reference])
   end
 
+  def autocomplete
+    render json: Poem.search(
+      params[:query],
+      fields: ['fragment^5'],
+      match: :word_start,
+      limit: 10,
+      load: false,
+      misspellings: { below: 5 }
+    ).map(&:fragment)
+  end
+
   private
 
   def search_by_song
