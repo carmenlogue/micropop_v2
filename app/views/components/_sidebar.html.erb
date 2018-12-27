@@ -21,20 +21,14 @@
     <!-- Main Menu -->
     <div class="side-menu-container">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'A / Z .', alphabet_path,
-                        class: "#{params[:action] == 'alphabet' ? 'active' : ''}" %></li>
-        <li><%= link_to 'GREATEST HITS .', hits_path,
-                        class: "#{params[:action] == 'hits' ? 'active' : ''}" %></li>
-        <li><%= link_to 'BEST OF .', best_path(query: 'best of'),
-                        class: "#{params[:action] == 'best' ? 'active' : ''}" %></li>
+        <li><%= link_to 'A / Z .', alphabet_path, class: active_link_class('alphabet') %></li>
+        <li><%= link_to 'GREATEST HITS .', hits_list_path, class: active_link_class('hits_list') %></li>
+        <li><%= link_to 'BEST OF .', best_path(query: 'best of'), class: active_link_class('best') %></li>
 
         <li><%= link_to image_tag("random_c.png"), poem_path(reference: Poem.pluck(:reference).sample) %></li>
-        <li><%= link_to image_tag("tw_a.png"), 'https://twitter.com/microPOP_',
-                        target: "_blank" %></li>
-        <li><%= link_to image_tag("in_a.png"), 'https://www.instagram.com/microPOP__/',
-                        target: "_blank" %></li>
-        <li><%= link_to image_tag("fb_a.png"), 'https://www.facebook.com/somosmicropop/',
-                        target: "_blank" %></li>
+        <li><%= link_to image_tag("tw_a.png"), 'https://twitter.com/microPOP_', target: "_blank" %></li>
+        <li><%= link_to image_tag("in_a.png"), 'https://www.instagram.com/microPOP__/', target: "_blank" %></li>
+        <li><%= link_to image_tag("fb_a.png"), 'https://www.facebook.com/somosmicropop/', target: "_blank" %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>

@@ -3,7 +3,7 @@ class PoemsController < ApplicationController
     poem_results = (
       search_by_song + search_by_artist + search_by_tag + search_by_poem
     ).uniq
-    @poems = Kaminari.paginate_array(poem_results).page(params[:page])
+    paginate_poems(poem_results)
   end
 
   def show
@@ -40,9 +40,5 @@ class PoemsController < ApplicationController
 
   def search_by_poem
     Poem.search(params[:query], misspellings: false).results
-  end
-
-  def poem_results(opt = {})
-    Poem.search('*', where: opt).results
   end
 end

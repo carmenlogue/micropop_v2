@@ -14,7 +14,7 @@ class PagesController < ApplicationController
     @letters = LETTERS
   end
 
-  def hits
+  def hits_list
     @hits = HITS
   end
 
