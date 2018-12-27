@@ -1,0 +1,9 @@
+<div class="col-md-5 col-sm-5">
+  <ul class="list-group list-menu">
+    <% @artists.each do |artist| %>
+      <li class="list-group-item">
+        <%= link_to artist.name, scoped_index_artists_path(artist_id: artist.id) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

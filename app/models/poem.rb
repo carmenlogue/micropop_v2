@@ -23,6 +23,10 @@ class Poem < ApplicationRecord
     }
   end
 
+  def to_param
+    reference
+  end
+
   private
 
   def create_reference
