@@ -3,7 +3,7 @@ class PoemsController < ApplicationController
     poem_results = (
       search_by_song + search_by_artist + search_by_tag + search_by_poem
     ).uniq
-    paginate_poems(poem_results)
+    paginate_search_results(poem_results)
   end
 
   def show
@@ -13,7 +13,7 @@ class PoemsController < ApplicationController
   def autocomplete
     render json: Poem.search(
       params[:query],
-      fields: ['fragment^5'],
+      fields: ['fragment'],
       match: :word_start,
       limit: 10,
       load: false,

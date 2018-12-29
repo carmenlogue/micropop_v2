@@ -15,7 +15,7 @@ class ArtistsController < ApplicationController
 
   def scoped_index
     poems = poem_results(artist_id: params[:artist_id])
-    paginate_poems(poems)
+    paginate_search_results(poems)
   end
 
   private

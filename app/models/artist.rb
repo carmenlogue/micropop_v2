@@ -3,6 +3,9 @@ class Artist < ApplicationRecord
 
   has_many :songs, dependent: :destroy
 
+  validates :name,      presence: true
+  validates :signature, presence: true
+
   def poems
     songs.flat_map(&:poems)
   end

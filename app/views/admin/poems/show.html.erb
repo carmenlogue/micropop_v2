@@ -31,11 +31,8 @@
         <dt>Image</dt>
         <dd><%= image_tag @poem.image.admin_thumb.url if @poem.image? %></dd>
 
-        <dt>Categories</dt>
-        <dd><%= @poem.categories.map(&:name) %></dd>
-
         <dt>Tags</dt>
-        <dd><%= @poem.tags.map(&:name) %></dd>
+        <dd><%= @poem.tags&.order(:name)&.pluck(:name).join(', ') %></dd>
       </dl>
     </div>
   </div>

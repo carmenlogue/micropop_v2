@@ -10,6 +10,7 @@ class Poem < ApplicationRecord
   delegate :artist, to: :song
 
   validates :fragment,  presence:   true
+  validates :image,     presence:   true
   validates :reference, uniqueness: true
 
   before_create :create_reference
