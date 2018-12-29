@@ -27,8 +27,9 @@
   <%= paginate @artists %>
   <table class="table">
     <tr>
-      <%= content_tag(:th, 'Name', scope: 'col') %>
-      <%= content_tag(:th, 'Actions',  scope: 'col') %>
+      <%= content_tag(:th, 'Name',      scope: 'col') %>
+      <%= content_tag(:th, 'Signature', scope: 'col') %>
+      <%= content_tag(:th, 'Actions',   scope: 'col') %>
     </tr>
     <tr>
       <% if @artists.any? %>

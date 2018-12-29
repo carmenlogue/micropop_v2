@@ -1,5 +1,6 @@
 <tr>
   <%= content_tag(:td, artist.name, scope: 'row') %>
+  <%= content_tag(:td, artist.signature, scope: 'row') %>
   <td>
     <%= link_to 'View', admin_artist_path(artist) %> |
     <%= link_to 'Edit', edit_admin_artist_path(artist) %> |

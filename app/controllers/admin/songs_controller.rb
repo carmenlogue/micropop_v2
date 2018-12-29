@@ -3,15 +3,15 @@ module Admin
     before_action :set_song, only: [:show, :edit, :update, :destroy]
 
     def index
-      results = if params[:query]
-                  Song.all.order(:title).where(
-                    'lower(title) LIKE ?',
-                    "%#{params[:query].downcase}%"
-                  )
-                else
-                  Song.all.order(:title)
-                end
-      @songs = results.page(params[:page])
+      query = params[:query].presence || '*'
+      results = Song.search(
+        query,
+        fields: ['title'],
+        match: :word_start,
+        misspellings: { below: 3 }
+      ).results
+
+      @songs = paginate_array(results)
     end
 
     def new
@@ -51,7 +51,7 @@ module Admin
     end
 
     def song_params
-      params[:song].permit(:title)
+      params[:song].permit(:title, :year, :artist_id)
     end
 
     def success_path

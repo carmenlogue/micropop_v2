@@ -3,15 +3,15 @@ module Admin
     before_action :set_poem, only: [:show, :edit, :update, :destroy]
 
     def index
-      results = if params[:query]
-                  Poem.all.order(:fragment).where(
-                    'lower(fragment) LIKE ?',
-                    "%#{params[:query].downcase}%"
-                  )
-                else
-                  Poem.all.order(:fragment)
-                end
-      @poems = results.page(params[:page])
+      query = params[:query].presence || '*'
+      results = Poem.search(
+        query,
+        fields: ['fragment'],
+        match: :word_start,
+        misspellings: { below: 3 }
+      ).results
+
+      @poems = paginate_array(results)
     end
 
     def new
@@ -47,11 +47,11 @@ module Admin
     private
 
     def set_poem
-      @poem = Poem.find(params[:id])
+      @poem = Poem.find_by(reference: params[:id])
     end
 
     def poem_params
-      params[:poem].permit(:fragment, :image, :image_cache, :remove_image)
+      params[:poem].permit(:fragment, :image, :image_cache, :remove_image, :song_id, tag_ids: [])
     end
 
     def success_path

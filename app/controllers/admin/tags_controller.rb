@@ -3,12 +3,15 @@ module Admin
     before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
     def index
-      results = if params[:query]
-                  Tag.all.order(:name).where('lower(name) LIKE ?', "%#{params[:query].downcase}%")
-                else
-                  Tag.all.order(:name)
-                end
-      @tags = results.page(params[:page])
+      query = params[:query].presence || '*'
+      results = Tag.search(
+        query,
+        fields: ['name'],
+        match: :word_start,
+        misspellings: { below: 3 }
+      ).results
+
+      @tags = paginate_array(results)
     end
 
     def new

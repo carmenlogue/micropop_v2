@@ -3,13 +3,17 @@ class ApplicationController < ActionController::Base
 
   ONE_POEM = 1
 
-  def paginate_poems(poem_results)
-    if poem_results.count == ONE_POEM
-      redirect_to poem_path(poem_results.first.reference)
+  def paginate_search_results(results)
+    if results.count == ONE_POEM
+      redirect_to poem_path(results.first.reference)
     else
-      @poems = Kaminari.paginate_array(poem_results).page(params[:page])
+      @poems = paginate_array(results)
       render 'poems/index'
     end
+  end
+
+  def paginate_array(results)
+    Kaminari.paginate_array(results).page(params[:page])
   end
 
   private

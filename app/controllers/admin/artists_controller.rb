@@ -3,16 +3,15 @@ module Admin
     before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
     def index
-      results = if params[:query]
-                  Artist.all.order(:name).where(
-                    'lower(name) LIKE ? or lower(signature) like ?',
-                    "%#{params[:query].downcase}%",
-                    "%#{params[:query].downcase}%"
-                  )
-                else
-                  Artist.all.order(:name)
-                end
-      @artists = results.page(params[:page])
+      query = params[:query].presence || '*'
+      results = Artist.search(
+        query,
+        fields: ['name'],
+        match: :word_start,
+        misspellings: { below: 3 }
+      ).results
+
+      @artists = paginate_array(results)
     end
 
     def new
