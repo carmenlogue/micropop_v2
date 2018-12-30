@@ -1,0 +1,8 @@
+$("<%=j render(partial: 'poems/poems_index') %>").appendTo($("#poems-index"));
+
+<% if @poems.last_page? %>
+  $('.center-pagination').html("");
+<% else %>
+  $('.center-pagination')
+    .html("<%= j link_to_next_page(@poems, 'Ver más', remote: true, class: 'more-poems-link') %>");
+<% end %>

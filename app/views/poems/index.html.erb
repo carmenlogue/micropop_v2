@@ -1,11 +1,6 @@
 <div id="poems-index" class="col-md-12 col-sm-12">
-  <% @poems.each do |poem| %>
-    <%= link_to image_tag(poem.image.index_size.url),
-                poem_path(poem),
-                class: 'poem-image'
-    %>
-  <% end %>
+  <%= render 'poems/poems_index' %>
 </div>
 <div class="center-pagination">
-  <%= paginate @poems %>
+  <%= link_to_next_page(@poems, 'Ver más', remote: true, class: 'more-poems-link') %>
 </div>

@@ -1,8 +1,3 @@
-html {
-  overflow: -moz-scrollbars-vertical;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
 /* Sidebar and top nav bar
 -------------------------------------------------- */
 
@@ -19,11 +14,11 @@ html {
   height: 100%;
   background-color: #f8f8f8;
   border-right: 1px solid #e7e7e7;
-  padding-top: 20px;
 }
 .side-menu .navbar {
   border: none;
   text-align: right;
+  padding: 25px 40px 0 0;
 }
 .side-menu .navbar-header {
   width: 100%;
@@ -42,6 +37,12 @@ html {
 }
 .navbar-default .navbar-nav>li>a {
   color: #d22d61 !important;
+}
+.navbar-default .navbar-nav>li>a:hover {
+  color: #5caddc !important;
+}
+.navbar-default .navbar-nav>li>a:active {
+  color: #5caddc !important;
 }
 .side-menu .brand-name-wrapper {
   min-height: 190px;

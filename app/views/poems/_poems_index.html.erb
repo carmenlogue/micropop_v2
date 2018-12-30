@@ -1,0 +1,6 @@
+<% @poems.each do |poem| %>
+  <%= link_to image_tag(poem.image.index_size.url),
+              poem_path(poem),
+              class: 'poem-image'
+  %>
+<% end %>
