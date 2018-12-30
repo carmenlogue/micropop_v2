@@ -5,7 +5,37 @@
   float: none;
   margin: 0 auto;
   justify-content: center;
+  text-align: center;
 }
 .alphabet-letter {
   margin: 20px;
+}
+#artists-list {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+}
+.list-menu {
+  max-height: 325px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+   width: 13px;
+ }
+::-webkit-scrollbar-track {
+  background: white;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb {
+  border: 1px solid white;
+}
+.artist-item {
+  display: block;
+  padding: 5px 15px;
+  font-style: italic;
+}
+.artist-name {
+  color: white;
 }

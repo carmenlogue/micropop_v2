@@ -1,4 +1,4 @@
-<div id="alphabet-index" class="col-md-9 col-sm-12">
+<div id="alphabet-index" class="col-lg-9 col-md-9 col-sm-12">
   <% @letters.each do |letter| %>
     <%= link_to image_tag("alphabet/az_#{letter.downcase}"),
                 artists_path(letter: letter),

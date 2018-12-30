@@ -14,4 +14,3 @@
 //= require_tree ./admin
 //= require twitter/typeahead
 //= require typeahead
-//= require jquery.infinite-pages
