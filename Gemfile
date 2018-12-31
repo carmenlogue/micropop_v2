@@ -10,6 +10,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 
+gem 'bonsai-elasticsearch-rails'
 gem 'bootstrap', '>= 4.1.2'
 gem 'carrierwave'
 gem 'devise'
