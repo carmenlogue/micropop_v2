@@ -6,10 +6,10 @@
 
         <!-- Brand -->
         <div class="brand-name-wrapper">
-          <%= link_to image_tag("logo_a.png"), poem_path(reference: Poem.pluck(:reference).sample, class: 'logo') %>
+          <%= link_to image_tag("logo_a.png"), poem_path(reference: Poem.pluck(:reference).sample) %>
           <!-- Small size menu -->
           <div class="col-xs-5 navbar-toggle-menu">
-            <%= link_to image_tag("logo_a.png"), poem_path(reference: Poem.pluck(:reference).sample, class: 'small-logo') %>
+            <%= link_to image_tag("logo_a.png"), poem_path(reference: Poem.pluck(:reference).sample) %>
             <div class="navbar-toggle">
               <ul class="social-icons-list">
                 <li class="social-icon"><%= link_to image_tag("tw_a.png"), 'https://twitter.com/microPOP_', target: "_blank" %></li>
@@ -26,7 +26,7 @@
                 <li><%= link_to 'BEST OF .', best_path(query: 'best of'), class: active_link_class('best') %></li>
               </ul>
             </div>
-          </div>
+          </div><!-- End small size menu -->
         </div>
       </div>
     </div>
