@@ -3,17 +3,30 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <div class="brand-wrapper">
-        <!-- Hamburger -->
-        <button type="button" class="navbar-toggle">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
 
         <!-- Brand -->
         <div class="brand-name-wrapper">
-          <%= link_to image_tag("logo_a.png"), poem_path(reference: Poem.pluck(:reference).sample) %>
+          <%= link_to image_tag("logo_a.png"), poem_path(reference: Poem.pluck(:reference).sample, class: 'logo') %>
+          <!-- Small size menu -->
+          <div class="col-xs-5 navbar-toggle-menu">
+            <%= link_to image_tag("logo_a.png"), poem_path(reference: Poem.pluck(:reference).sample, class: 'small-logo') %>
+            <div class="navbar-toggle">
+              <ul class="social-icons-list">
+                <li class="social-icon"><%= link_to image_tag("tw_a.png"), 'https://twitter.com/microPOP_', target: "_blank" %></li>
+                <li class="social-icon"><%= link_to image_tag("in_a.png"), 'https://www.instagram.com/microPOP__/', target: "_blank" %></li>
+                <li class="social-icon"><%= link_to image_tag("fb_a.png"), 'https://www.facebook.com/somosmicropop/', target: "_blank" %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-7 menu-small">
+            <div class="">
+              <ul class="nav navbar-nav">
+                <li><%= link_to 'A / Z .', alphabet_path, class: active_link_class('alphabet') %></li>
+                <li><%= link_to 'GREATEST HITS .', hits_list_path, class: active_link_class('hits_list') %></li>
+                <li><%= link_to 'BEST OF .', best_path(query: 'best of'), class: active_link_class('best') %></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -33,3 +46,4 @@
     </div><!-- /.navbar-collapse -->
   </nav>
 </div>
+
