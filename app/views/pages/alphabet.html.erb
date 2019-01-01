@@ -1,6 +1,6 @@
 <div id="alphabet-index" class="col-lg-9 col-md-9 col-sm-12">
   <% @letters.each do |letter| %>
-    <%= link_to image_tag("alphabet/az_#{letter.downcase}"),
+    <%= link_to image_tag("alphabet/az_#{letter.downcase}.png"),
                 artists_path(letter: letter),
                 class: 'alphabet-letter'
     %>

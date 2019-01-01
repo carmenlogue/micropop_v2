@@ -1,6 +1,6 @@
 <div id="hits-index" class="col-md-9 col-sm-12">
   <% @hits.each do |hit| %>
-    <%= link_to image_tag("greatest_hits/greatesthits_#{hit}"),
+    <%= link_to image_tag("greatest_hits/greatesthits_#{hit}.png"),
                 hits_path(hit_tag: hit),
                 class: 'hit-box'
     %>
