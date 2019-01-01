@@ -15,10 +15,6 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.before(:suite) do
-    [Artist, Song, Tag, Poem].each do |model|
-      model.searchkick_index.delete if model.searchkick_index.exists?
-      model.reindex
-    end
     # and disable callbacks
     Searchkick.disable_callbacks
   end
