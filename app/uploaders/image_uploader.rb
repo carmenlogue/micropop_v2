@@ -1,8 +1,6 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  storage :aws
-
   def store_dir
     if Rails.env.development? || Rails.env.test?
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
