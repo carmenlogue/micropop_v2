@@ -1,5 +1,6 @@
 class Artist < ApplicationRecord
-  searchkick word_start: [:name]
+  searchkick word_start: [:name],
+             settings: { number_of_shards: ENV.fetch('ELASTICSEARCH_SHARDS') }
 
   has_many :songs, dependent: :destroy
 
