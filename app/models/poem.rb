@@ -1,5 +1,6 @@
 class Poem < ApplicationRecord
-  searchkick word_start: [:fragment]
+  searchkick word_start: [:fragment],
+             settings: { number_of_shards: ENV.fetch('ELASTICSEARCH_SHARDS') }
 
   mount_uploader :image, ImageUploader
 
